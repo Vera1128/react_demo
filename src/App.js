@@ -2,7 +2,10 @@
  * Created by yangyang.xu on 2017/10/30.
  */
 import React, { Component, PropTypes} from 'react';
-import QrCode from './component/QrCode'
+import QrCode from './component/QrCode';
+import CheckBox from './component/CheckBox';
+import SelectMulti from './component/SelectMulti';
+import List from './component/List';
 
 class App extends Component {
   constructor(props) {
@@ -22,6 +25,9 @@ class App extends Component {
         <input type="text" ref={(ref) => this.myTextInput = ref} />
         <input type="button" value="Focus the text input" onClick={() => this.handleClick('haha')}/>
         <QrCode/>
+        <CheckBox/>
+        <SelectMulti/>
+        <List list={[{text:1}, {text:2}, {text:3}, {text:4}]} handleItemChange={this.handleItemChange}/>
       </div>
     );
   }
@@ -30,6 +36,10 @@ class App extends Component {
       this.myTextInput.focus();
       console.log(str);
     }
+  }
+  handleItemChange = (item) => {
+    console.log(item);
+    // console.log('yangyangyang');
   }
   //在render方法之前执行
   componentWillMount() {

@@ -3,6 +3,7 @@
  */
 import React, { Component, PropTypes} from 'react';
 import '../style/QrCode.scss';
+import classNames from 'classnames';
 
 class QrCode extends Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class QrCode extends Component {
     return (
       <div>
         <div className="btn-style" onClick={this.handleBtnClick}>出现图片</div>
-        <div  style={{display: this.state.active ? 'block' : 'none'}} onClick={this.handleImgClick}>
+        <div className={classNames({'img-container': true, 'img-show': this.state.active, 'img-hidden': !this.state.active})} onClick={this.handleImgClick}>
           <img className="Qr-image" src={require('../image/egg.png')}/>
         </div>
         <div>
