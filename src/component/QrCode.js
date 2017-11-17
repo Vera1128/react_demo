@@ -52,12 +52,12 @@ class QrCode extends Component {
   }
   handleInputChange = (e) => {
     this.setState({
-      inputValue: e.target.value
+      inputValue: e.target.value.replace(/\s/g, "")
     })
   }
   handleTextareaChange = (e) => {
     this.setState({
-      textareaValue: e.target.value
+      textareaValue: trim(e.target.value)
     })
   }
   //生命周期函数

@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "4bb729b11128be4cc439"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "b6fd10efd7c3080dece3"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -27938,13 +27938,13 @@ var QrCode = _wrapComponent('QrCode')((_temp = _class = function (_Component) {
 
     _this.handleInputChange = function (e) {
       _this.setState({
-        inputValue: e.target.value
+        inputValue: e.target.value.replace(/\s/g, "")
       });
     };
 
     _this.handleTextareaChange = function (e) {
       _this.setState({
-        textareaValue: e.target.value
+        textareaValue: trim(e.target.value)
       });
     };
 
