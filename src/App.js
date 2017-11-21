@@ -2,10 +2,8 @@
  * Created by yangyang.xu on 2017/10/30.
  */
 import React, { Component, PropTypes} from 'react';
-import QrCode from './component/QrCode';
-import CheckBox from './component/CheckBox';
-import SelectMulti from './component/SelectMulti';
-import List from './component/List';
+import Routes from './routes/index';
+import { HashRouter, Route, hashHistory } from 'react-router-dom';
 
 class App extends Component {
   constructor(props) {
@@ -13,7 +11,7 @@ class App extends Component {
     this.state = {
     };
   }
-  static PropTypes = {
+  static propTypes = {
 
   };
   static defaultProps = {
@@ -21,25 +19,10 @@ class App extends Component {
   };
   render() {
     return (
-      <div>
-        <input type="text" ref={(ref) => this.myTextInput = ref} />
-        <input type="button" value="Focus the text input" onClick={() => this.handleClick('haha')}/>
-        <QrCode/>
-        <CheckBox/>
-        <SelectMulti/>
-        <List list={[{text:1}, {text:2}, {text:3}, {text:4}]} handleItemChange={this.handleItemChange}/>
-      </div>
+      <HashRouter history={hashHistory}>
+        <Routes/>
+      </HashRouter>
     );
-  }
-  handleClick = (str) => {
-    if (this.myTextInput !== null) {
-      this.myTextInput.focus();
-      console.log(str);
-    }
-  }
-  handleItemChange = (item) => {
-    console.log(item);
-    // console.log('yangyangyang');
   }
   //在render方法之前执行
   componentWillMount() {
@@ -57,7 +40,6 @@ class App extends Component {
 
   }
   shouldComponentUpdate(nextProps, nextState) {
-
   }
   componentWillUpdate(nextProps, nextState) {
 

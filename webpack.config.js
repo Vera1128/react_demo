@@ -17,7 +17,7 @@ module.exports = {
   },
   devServer: {
     contentBase: "./build",//本地服务器所加载的页面所在的目录
-    historyApiFallback: true,//不跳转 在开发单页应用时非常有用，它依赖于HTML5 history API，如果设置为true，所有的跳转将指向index.html
+    // historyApiFallback: true,//不跳转 在开发单页应用时非常有用，它依赖于HTML5 history API，如果设置为true，所有的跳转将指向index.html
     inline: true,//实时刷新
     port: 8090
   },
