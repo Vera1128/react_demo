@@ -1,14 +1,11 @@
 /**
- * Created by yangyang.xu on 2017/11/16.
- * 详情页
+ * Created by yangyang.xu on 2017/11/21.
  */
 import React, { Component } from 'react';
-import classNames from 'classnames';
-import PropTypes from 'prop-types';
 import { is } from 'immutable';
-import myLib from '../utils/myLib';
+import { Link } from 'react-router-dom';
 
-class Detail extends Component {
+class Nav extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,22 +19,16 @@ class Detail extends Component {
   };
   render() {
     return (
-      <h1>Detail</h1>
+      <nav>
+        <Link to="/">Home</Link><br/>
+        <Link to="/detail">Detail</Link>
+      </nav>
     );
   }
   //生命周期函数
   //在render方法之前执行
   componentWillMount() {
-    myLib.ajax({
-      type: 'get',
-      dataType: 'json',
-      url: 'http://10.0.9.236:8877/list_user',
-      success: (data) => {
-        console.log(JSON.stringify(data));
-      },
-      error: () => {
-      }
-    })
+
   }
   //在render方法之后执行
   componentDidMount() {
@@ -78,5 +69,4 @@ class Detail extends Component {
   }
 }
 
-export default Detail
-
+export default Nav

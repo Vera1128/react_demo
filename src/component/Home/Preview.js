@@ -1,43 +1,37 @@
 /**
- * Created by yangyang.xu on 2017/11/16.
- * 详情页
+ * Created by yangyang.xu on 2017/11/21.
  */
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { is } from 'immutable';
-import myLib from '../utils/myLib';
 
-class Detail extends Component {
+class Preview extends Component {
   constructor(props) {
     super(props);
     this.state = {
     };
   }
   static propTypes = {
-
+    title: PropTypes.string,
+    link: PropTypes.string
   };
   static defaultProps = {
 
   };
   render() {
     return (
-      <h1>Detail</h1>
+      <article className="article-preview-item">
+        <h1 className="title">{this.props.title}</h1>
+        <span className="date">{this.props.date}</span>
+        <p className="desc">{this.props.description}</p>
+      </article>
     );
   }
   //生命周期函数
   //在render方法之前执行
   componentWillMount() {
-    myLib.ajax({
-      type: 'get',
-      dataType: 'json',
-      url: 'http://10.0.9.236:8877/list_user',
-      success: (data) => {
-        console.log(JSON.stringify(data));
-      },
-      error: () => {
-      }
-    })
+
   }
   //在render方法之后执行
   componentDidMount() {
@@ -78,5 +72,4 @@ class Detail extends Component {
   }
 }
 
-export default Detail
-
+export default Preview

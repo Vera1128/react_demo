@@ -3,7 +3,7 @@
  */
 import React, { Component, PropTypes} from 'react';
 import Routes from './routes/index';
-import { HashRouter, Route, hashHistory } from 'react-router-dom';
+import { HashRouter, Route, hashHistory, Link } from 'react-router-dom';
 
 class App extends Component {
   constructor(props) {
@@ -19,9 +19,13 @@ class App extends Component {
   };
   render() {
     return (
-      <HashRouter history={hashHistory}>
-        <Routes/>
-      </HashRouter>
+      <div>
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/detail">Detail</Link></li>
+        </ul>
+        {this.props.children}
+      </div>
     );
   }
   //在render方法之前执行
@@ -40,6 +44,7 @@ class App extends Component {
 
   }
   shouldComponentUpdate(nextProps, nextState) {
+    return true;
   }
   componentWillUpdate(nextProps, nextState) {
 

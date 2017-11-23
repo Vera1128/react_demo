@@ -6,6 +6,7 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { is } from 'immutable';
+import { Link } from 'react-router-dom';
 
 class Home extends Component {
   constructor(props) {
@@ -21,7 +22,9 @@ class Home extends Component {
   };
   render() {
     return (
-      <h1>首页</h1>
+      <div>
+        <h1>首页</h1>
+      </div>
     );
   }
   //生命周期函数

@@ -8,7 +8,8 @@ import PropTypes from 'prop-types';
 import { is } from 'immutable';
 import Home from '../views/Home';
 import Detail from '../views/Detail';
-import { Route, Switch } from 'react-router-dom';
+import MyFrame from '../layouts/Frame';
+import { Route, Switch} from 'react-router-dom';
 
 class routes extends Component {
   constructor(props) {
@@ -24,10 +25,10 @@ class routes extends Component {
   };
   render() {
     return (
-      <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route path="/detail" component={Detail}/>
-      </Switch>
+      <MyFrame>
+          <Route exact path="/" component={Home}/>
+          <Route path="/detail" component={Detail}/>
+      </MyFrame>
     );
   }
   //生命周期函数
