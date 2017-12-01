@@ -58,7 +58,7 @@ module.exports = {
         })
       },
       {
-        test: /\.(png|jpg)$/,
+        test: /\.(png|jpg|jpeg)$/,
         exclude: /node_modules/,
         loader: 'url-loader',
       }

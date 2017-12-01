@@ -1,10 +1,11 @@
 /**
  * Created by yangyang.xu on 2017/11/7.
  */
-// js组件模板
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import { HashRouter, Route, hashHistory, Link, Switch } from 'react-router-dom';
+import history from '../public/history';
 
 class ListItem extends Component {
   constructor(props) {
@@ -12,29 +13,26 @@ class ListItem extends Component {
     this.state = {
     };
   }
-  static PropTypes = {
+  static propTypes = {
 
   };
   static defaultProps = {
-    text: '',
-    checked: false,
-  };
-  static contextTypes = {
-    color: PropTypes.string
+
   };
   render() {
     return (
       <div>
-        <li style={{background: this.context.color}}>
-          <input type="checkbox" checked={this.props.checked} onChange={this.props.onChange}/>
-          <span>
-            {this.props.value}
-          </span>
-        </li>
+        <div onClick={this.clickHandle}>
+          {this.props.value.title} <br/>
+          {this.props.value.content} <br/>
+          <img src={this.props.value.img_url}/>
+        </div>
       </div>
     );
   }
-  handleBtnClick = () => {
+  clickHandle = () => {
+    // react router4点击实现路由跳转
+    history.push('/detail');
   }
   //生命周期函数
   //在render方法之前执行
@@ -47,6 +45,7 @@ class ListItem extends Component {
   }
   //组件卸载前，常在其中执行一些清理方法，如事件回收或清除定时器
   componentWillUnmount() {
+
   }
   componentWillReceiveProps(nextProps) {
 

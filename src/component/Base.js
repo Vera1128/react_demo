@@ -46,6 +46,7 @@ class Base extends Component {
   }
   //组件卸载前，常在其中执行一些清理方法，如事件回收或清除定时器
   componentWillUnmount() {
+
   }
   componentWillReceiveProps(nextProps) {
 

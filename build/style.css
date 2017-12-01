@@ -1,33 +1,22 @@
-.btn-style {
-  display: block;
-  width: 100px;
-  height: 30px;
-  border: 1px solid red;
-  border-radius: 2px;
-  text-align: center;
-  margin: 0 auto;
-  line-height: 30px; }
-
-.Qr-image {
-  display: block;
-  width: 100px;
-  height: 100px;
-  margin: 0 auto;
-  border: 1px solid blue; }
-
-.input-style {
-  border: 1px solid red;
-  border-radius: 2px; }
+.home-page {
+  width: 700px;
+  margin: auto; }
+  .home-page .home-page-title {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    color: black;
+    font-weight: 500; }
+  .home-page .nav-style {
+    width: 100%;
+    margin: 10px 0; }
+    .home-page .nav-style .link-style {
+      display: inline-block;
+      margin-right: 10px;
+      color: #008adf; }
 
 .img-container {
-  border: 1px solid red;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 100%;
   margin: auto; }
-
-.img-show {
-  display: block; }
-
-.img-hidden {
-  display: none; }
+  .img-container img {
+    width: 100%; }

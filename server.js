@@ -20,12 +20,39 @@ app.get('/del_user', function (req, res) {
   res.send('删除页面');
 })
 
-app.get('/list_user', function (req, res) {
+app.get('/artical_list', function (req, res) {
   console.log('/list_user 响应 GET 请求');
   //允许跨域请求
   res.header('Access-Control-Allow-Origin', '*');
+  const testData = [
+    {
+      title: '贤惠姐1号',
+      content: '1号有点傻',
+      img_url: ''
+    },
+    {
+      title: '贤惠姐2号',
+      content: '2号有点傻',
+      img_url: ''
+    },
+    {
+      title: '贤惠姐3号',
+      content: '3号有点傻',
+      img_url: ''
+    },
+    {
+      title: '贤惠姐4号',
+      content: '4号有点傻',
+      img_url: ''
+    },
+    {
+      title: '贤惠姐5号',
+      content: '5号有点傻',
+      img_url: ''
+    }
+  ];
   var response = {
-    "result": 'hahha是我yangyangyang'
+    "result": testData
   };
   res.end(JSON.stringify(response));
 })
