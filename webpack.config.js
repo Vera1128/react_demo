@@ -17,9 +17,26 @@ module.exports = {
   },
   devServer: {
     contentBase: "./build",//本地服务器所加载的页面所在的目录
-    // historyApiFallback: true,//不跳转 在开发单页应用时非常有用，它依赖于HTML5 history API，如果设置为true，所有的跳转将指向index.html
+    historyApiFallback: true,//不跳转 在开发单页应用时非常有用，它依赖于HTML5 history API，如果设置为true，所有的跳转将指向index.html
     inline: true,//实时刷新
-    port: 8090
+    port: 8090,
+    // 代理服务器 解决跨域问题
+    proxy: {
+      '/artical_list': {
+        target: 'http://10.0.9.236:8877/artical_list',
+        pathRewrite: {'^/artical_list' : ''},
+        changeOrigin: true
+      }
+    }
+    // 举个例子
+    // proxy: {
+    //   '/api': {
+    //     target: 'http://user.reekly.com/',
+    //     pathRewrite: {'^/api' : '/campaign_huggies/t3store_freeuse/admin'},
+    //     changeOrigin: true
+    //   }
+    // }
+    // 这样http://localhos:8080/api/getUser.php的请求就是http://user.reekly.com/campaign_huggies/t3store_freeuse/admin/getUser.php
   },
   module: {
     rules: [

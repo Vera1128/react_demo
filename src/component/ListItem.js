@@ -26,6 +26,8 @@ class ListItem extends Component {
           {this.props.value.title} <br/>
           {this.props.value.content} <br/>
           <img src={this.props.value.img_url}/>
+          {/*<img src={require(`${this.props.value.img_url}`)}/>*/}
+          {/*<img src={require('../image/egg.png')}/>*/}
         </div>
       </div>
     );
