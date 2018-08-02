@@ -50,6 +50,51 @@ app.get('/artical_list', function (req, res) {
       title: '贤惠姐5号',
       content: '5号有点傻',
       img_url: 'http://dialer.cdn.cootekservice.com/icon/guess_success.png'
+    },
+    {
+      title: '贤惠姐6号',
+      content: '6号有点傻',
+      img_url: 'http://dialer.cdn.cootekservice.com/icon/guess_success.png'
+    },
+    {
+      title: '贤惠姐7号',
+      content: '7号有点傻',
+      img_url: 'http://dialer.cdn.cootekservice.com/icon/guess_success.png'
+    },
+    {
+      title: '贤惠姐8号',
+      content: '8号有点傻',
+      img_url: 'http://dialer.cdn.cootekservice.com/icon/guess_success.png'
+    },
+    {
+      title: '贤惠姐9号',
+      content: '9号有点傻',
+      img_url: 'http://dialer.cdn.cootekservice.com/icon/guess_success.png'
+    },
+    {
+      title: '贤惠姐10号',
+      content: '10号有点傻',
+      img_url: 'http://dialer.cdn.cootekservice.com/icon/guess_success.png'
+    },
+    {
+      title: '贤惠姐7号',
+      content: '7号有点傻',
+      img_url: 'http://dialer.cdn.cootekservice.com/icon/guess_success.png'
+    },
+    {
+      title: '贤惠姐8号',
+      content: '8号有点傻',
+      img_url: 'http://dialer.cdn.cootekservice.com/icon/guess_success.png'
+    },
+    {
+      title: '贤惠姐9号',
+      content: '9号有点傻',
+      img_url: 'http://dialer.cdn.cootekservice.com/icon/guess_success.png'
+    },
+    {
+      title: '贤惠姐10号',
+      content: '10号有点傻',
+      img_url: 'http://dialer.cdn.cootekservice.com/icon/guess_success.png'
     }
   ];
   var response = {
@@ -57,6 +102,44 @@ app.get('/artical_list', function (req, res) {
   };
   res.end(JSON.stringify(response));
 })
+
+app.get('/user_list', function (req, res) {
+  console.log('/user_list 响应 GET 请求');
+  //允许跨域请求 在前端页面完成也可
+  // res.header('Access-Control-Allow-Origin', '*');
+  const testData = [
+    {
+      title: '羊羊羊1号',
+      content: '1号有点聪明',
+      img_url: 'http://dialer.cdn.cootekservice.com/icon/guess_success.png'
+    },
+    {
+      title: '羊羊羊2号',
+      content: '2号有点聪明',
+      img_url: 'http://dialer.cdn.cootekservice.com/icon/guess_success.png'
+    },
+    {
+      title: '羊羊羊3号',
+      content: '3号有点聪明',
+      img_url: 'http://dialer.cdn.cootekservice.com/icon/guess_success.png'
+    },
+    {
+      title: '羊羊羊4号',
+      content: '4号有点聪明',
+      img_url: 'http://dialer.cdn.cootekservice.com/icon/guess_success.png'
+    },
+    {
+      title: '羊羊羊5号',
+      content: '5号有点聪明',
+      img_url: 'http://dialer.cdn.cootekservice.com/icon/guess_success.png'
+    }
+  ];
+  var response = {
+    "result": testData
+  };
+  res.end(JSON.stringify(response));
+})
+
 
 var server = app.listen(8877, function () {
   console.log('端口号为8877的服务开启中……');
