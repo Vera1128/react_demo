@@ -17,12 +17,14 @@ class Other extends Component {
 
   };
   static defaultProps = {
-
+    testUrl: '<img src=\'http://cootek-dialer-download.oss-cn-hangzhou.aliyuncs.com/web/internal/activities/invite_friend/img/in_app/QQ.png\'/>'
   };
   render() {
     return (
       <div className="img-container">
         <img src={require('../image/caidan.jpeg')}/>
+        {/*{this.props.testUrl}*/}
+        <div dangerouslySetInnerHTML={{__html: this.props.testUrl}} />
       </div>
     );
   }
