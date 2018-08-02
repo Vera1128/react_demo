@@ -23,7 +23,7 @@ module.exports = {
     // 代理服务器 解决跨域问题
     proxy: {
       '/artical_list': {
-        target: 'http://10.0.9.236:8877/artical_list',
+        target: 'http://47.93.11.92/artical_list',
         pathRewrite: {'^/artical_list' : ''},
         changeOrigin: true
       }
@@ -46,11 +46,12 @@ module.exports = {
         test: /(\.jsx|\.js)$/,
         use: {
           loader: "babel-loader",
+
           query: {
             presets: ["react", "es2015", "stage-0"]
           }
         },
-        exclude: /node_modules/
+        // exclude: /node_modules/ 去掉这句突然就能使用UglifyJsPlugin压缩js了【毛病
       },
       {
         test: /\.(css|scss)$/,
@@ -83,7 +84,12 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),//热加载插件
-    // new webpack.optimize.UglifyJsPlugin(), //压缩js代码 webpack内置插件
+    new webpack.optimize.UglifyJsPlugin({    //压缩js
+      compress: {
+        warnings: false,
+        drop_console: true
+      }
+    }), //压缩js代码 webpack内置插件
     new ExtractTextPlugin("style.css"), //分离js及css 非内置插件，需要npm install --save-dev extract-text-webpack-plugin
     new HtmlWebpackPlugin({
       template: __dirname + "/src/index.tmpl.html" //new 一个插件的实例，并传入相关的参数
